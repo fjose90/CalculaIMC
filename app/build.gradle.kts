@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "dev.fernandojose.calculaimc"
-        minSdk = 33
+        minSdk = 27
         targetSdk = 37
         versionCode = 1
         versionName = "1.0"
