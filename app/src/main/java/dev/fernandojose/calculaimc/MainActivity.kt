@@ -1,12 +1,24 @@
 package dev.fernandojose.calculaimc
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import kotlin.math.pow
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var etPeso: EditText
+    private lateinit var etAltura: EditText
+    private lateinit var tvResultado: TextView
+    private lateinit var btCalcular: Button
+    private lateinit var btLimpar: Button
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -16,5 +28,45 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        etPeso = findViewById(R.id.etPeso)
+        etAltura = findViewById(R.id.etAltura)
+        tvResultado = findViewById(R.id.tvResultado)
+        btCalcular = findViewById(R.id.btCalcular)
+        btLimpar = findViewById(R.id.btLimpar)
+
+        btCalcular.setOnClickListener {
+            btCalcularOnClick()
+        }
+
+        btLimpar.setOnClickListener {
+            btLimparOnClick()
+        }
+    }
+
+    private fun btLimparOnClick() {
+        etPeso.text.clear()
+        etAltura.text.clear()
+        tvResultado.text = "0.0"
+        etPeso.requestFocus()
+    }
+
+    private fun btCalcularOnClick() {
+        //entrada
+        val campo1 = etPeso.text.toString()
+        val campo2 = etAltura.text.toString()
+        var resultado = 0.0
+
+
+        val peso = campo1.toDouble()
+        val altura = campo2.toDouble()
+
+        //processamento
+
+        resultado = peso / altura.pow(2)
+
+        //saída
+
+        tvResultado.text = "%.2f".format(resultado)
+
     }
 }
