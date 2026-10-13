@@ -52,15 +52,23 @@ class MainActivity : AppCompatActivity() {
 
     private fun btCalcularOnClick() {
         //entrada
-        val campo1 = etPeso.text.toString()
-        val campo2 = etAltura.text.toString()
         var resultado = 0.0
+        
+        val peso = etPeso.text.toString().toDoubleOrNull() ?: run {
+            etPeso.error = "Campo peso deve ser informado"
+            etPeso.requestFocus()
+            return
+        }
 
+        val altura = etAltura.text.toString().toDoubleOrNull() ?: run {
+            etAltura.error = "Campo altura deve ser informado"
+            etAltura.requestFocus()
+            return
+        }
 
-        val peso = campo1.toDouble()
-        val altura = campo2.toDouble()
 
         //processamento
+
 
         resultado = peso / altura.pow(2)
 
