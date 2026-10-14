@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "dev.fernandojose.calculaimc"
+    namespace = "dev.fernandojose.ui"
     compileSdk {
         version = release(37)
     }
