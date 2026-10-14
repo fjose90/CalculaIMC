@@ -1,4 +1,4 @@
-package com.exemplo.calculadoraimc.ui
+package dev.fernandojose.ui
 
 import android.os.Bundle
 import android.widget.Button
@@ -6,7 +6,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import dev.fernandojose.calculaimc.R
+import dev.fernandojose.ui.R
 import dev.fernandojose.model.ImcCalculadora
 
 class MainActivity : AppCompatActivity() {
@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var editPeso: EditText
     private lateinit var editAltura: EditText
     private lateinit var btnCalcular: Button
+    private lateinit var btnLimpar: Button
     private lateinit var textResultado: TextView
 
     private val calculadora = ImcCalculadora()
@@ -27,10 +28,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun inicializarComponentes() {
-        editPeso = findViewById(R.id.editPeso)
-        editAltura = findViewById(R.id.editAltura)
-        btnCalcular = findViewById(R.id.btnCalcular)
-        textResultado = findViewById(R.id.textResultado)
+        editPeso = findViewById(R.id.etPeso)
+        editAltura = findViewById(R.id.etAltura)
+        btnCalcular = findViewById(R.id.btCalcular)
+        btnLimpar = findViewById(R.id.btLimpar)
+        textResultado = findViewById(R.id.tvResultado)
     }
 
     private fun configurarCliques() {
@@ -52,6 +54,13 @@ class MainActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Preencha os campos corretamente!", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        btnLimpar.setOnClickListener {
+            editPeso.text.clear()
+            editAltura.text.clear()
+            textResultado.text = "0.0"
+            editPeso.requestFocus()
         }
     }
 }
