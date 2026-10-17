@@ -3,13 +3,13 @@ plugins {
 }
 
 android {
-    namespace = "dev.fernandojose.calculaimc"
+    namespace = "dev.fernandojose.bodycheck"
     compileSdk {
         version = release(37)
     }
 
     defaultConfig {
-        applicationId = "dev.fernandojose.calculaimc"
+        applicationId = "dev.fernandojose.bodycheck"
         minSdk = 27
         targetSdk = 37
         versionCode = 1

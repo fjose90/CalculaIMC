@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "CalculaIMC"
+rootProject.name = "BodyChech"
 include(":app")

@@ -1,4 +1,4 @@
-package dev.fernandojose.calculaimc
+package dev.fernandojose.bodycheck
 
 import android.os.Bundle
 import android.widget.Button
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
     private fun btCalcularOnClick() {
         //entrada
         var resultado = 0.0
-        
+
         val peso = etPeso.text.toString().toDoubleOrNull() ?: run {
             etPeso.error = "Campo peso deve ser informado"
             etPeso.requestFocus()
