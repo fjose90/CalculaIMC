@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "BodyChech"
+rootProject.name = "BodyCheck"
 include(":app")
