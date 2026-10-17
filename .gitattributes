@@ -3,6 +3,7 @@
 
 # Força arquivos de texto conhecidos a sempre usarem LF
 *.kt text eol=lf
+*.kts text eol=lf
 *.java text eol=lf
 *.js text eol=lf
 *.ts text eol=lf
